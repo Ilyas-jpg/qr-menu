@@ -1,0 +1,566 @@
+{
+  "generated": "seed-images.mjs",
+  "source": "Wikimedia Commons",
+  "products": {
+    "Serpme Kahvaltı (2 Kişilik)": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/bb81379d-bb3c-47d1-9c55-78894a7b494b",
+        "commons": "File:Airmen encouraged to maintain faith during prayer breakfast 120208-F-VO466-004.jpg",
+        "author": "Senior Airman Anthony Sanchelli",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Airmen_encouraged_to_maintain_faith_during_prayer_breakfast_120208-F-VO466-004.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/6ba41ff6-4479-4325-b1e0-fdd635cc4b32",
+        "commons": "File:Turkish Breakfast Spread.jpg",
+        "author": "Glassmug29",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_Breakfast_Spread.jpg"
+      }
+    ],
+    "Menemen": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/5baf1e0a-aa7c-432e-b1f8-6abf9e7d6738",
+        "commons": "File:Menemen (49657982813).jpg",
+        "author": "やましこ",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Menemen_(49657982813).jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/6a27a8bf-59aa-41a0-aca7-c74107daf477",
+        "commons": "File:Menemen with bread.jpg",
+        "author": "FakirNL",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Menemen_with_bread.jpg"
+      }
+    ],
+    "Sigara Böreği (6 Adet)": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/b41c64ac-9507-4df5-bb43-7eb89eb88564",
+        "commons": "File:Dost Evi Sigara Böreği - panoramio.jpg",
+        "author": "Aziz Akbiyik",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Dost_Evi_Sigara_B%C3%B6re%C4%9Fi_-_panoramio.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/f84fb82e-58b5-4fd2-8b91-e4fd323a8df5",
+        "commons": "File:Vegan Spinach Borek - Baker Street Coffee, Brighton 2024-01-22.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Vegan_Spinach_Borek_-_Baker_Street_Coffee,_Brighton_2024-01-22.jpg"
+      }
+    ],
+    "Bal Kaymak": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3ef39183-d844-43ee-b5af-031d881e33ba",
+        "commons": "File:Turkish breakfast (20658662572).jpg",
+        "author": "Jorge Franganillo",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_breakfast_(20658662572).jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/e26e6bed-86fa-4b0e-bed9-a20f5c953325",
+        "commons": "File:Kaymak from Montenegro 03.jpg",
+        "author": "Milica Buha",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Kaymak_from_Montenegro_03.jpg"
+      }
+    ],
+    "Avokadolu Yumurta Tost": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/c6dfeb8f-16ed-4682-a513-1cdfdc8476ae",
+        "commons": "File:NOT avocado on toast with fried egg - Black Mocha 2025-08-12.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:NOT_avocado_on_toast_with_fried_egg_-_Black_Mocha_2025-08-12.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/6ca1f7b6-f25c-407f-a7c6-9fcb7f9a79f7",
+        "commons": "File:Smashed Avocado On Toast (with one poached egg) - Jonny's 2026-01-06.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Smashed_Avocado_On_Toast_(with_one_poached_egg)_-_Jonny%27s_2026-01-06.jpg"
+      }
+    ],
+    "Mercimek Çorbası": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/b3c94d8a-2f47-4b77-a0e7-5f455b7ece52",
+        "commons": "File:Homemade Lentil Soup - Lavash 2025-02-10.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Homemade_Lentil_Soup_-_Lavash_2025-02-10.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3f3e0b84-2053-4202-99de-fa4098e5efb8",
+        "commons": "File:Kapellenstraße München — mercimek çorbası — afiyet olsun 20201210 215041.jpg",
+        "author": "no bias — קיין אומוויסנדיקע פּרעפֿערענצן — keyn umvisndike",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Kapellenstra%C3%9Fe_M%C3%BCnchen_%E2%80%94_mercimek_%C3%A7orbas%C4%B1_%E2%80%94_afiyet_olsun_20201210_215041.jpg"
+      }
+    ],
+    "Ezogelin Çorbası": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/a5b7cc7b-df49-474c-b743-1ba367c5c120",
+        "commons": "File:Ezogelin soup, bread, and water.jpg",
+        "author": "Matt Krause from Istanbul, Turkey",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ezogelin_soup,_bread,_and_water.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/66677f23-a5e8-4c3f-a59d-1ef410916889",
+        "commons": "File:Ezo Gelin soup.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ezo_Gelin_soup.jpg"
+      }
+    ],
+    "İşkembe Çorbası": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3a48ce07-8bff-4bc4-ab2b-01cd4178504b",
+        "commons": "File:Tripe soup in Ankara.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tripe_soup_in_Ankara.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/63571208-e971-48e6-81c1-f144c13bb7a7",
+        "commons": "File:Details of tripe soup (ishkembe).jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Details_of_tripe_soup_(ishkembe).jpg"
+      }
+    ],
+    "Acılı Ezme": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/11b0476d-e4c7-4caf-9b2a-90e5bc598151",
+        "commons": "File:Antakya Usulü Acılı Ezme.jpg",
+        "author": "Masisoz",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Antakya_Usul%C3%BC_Ac%C4%B1l%C4%B1_Ezme.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/83749937-7a38-4a4e-a374-45dd10188cc0",
+        "commons": "File:Ezme Lido Restaurant Adalar.JPG",
+        "author": "Benreis",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Ezme_Lido_Restaurant_Adalar.JPG"
+      }
+    ],
+    "Humus": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/ced8a275-4129-41e1-ad7a-b20222dfc85b",
+        "commons": "File:Hummus at Saba, Uptown New Orleans April 2025.jpg",
+        "author": "Paul Lowry",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Hummus_at_Saba,_Uptown_New_Orleans_April_2025.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/1fe054f6-bb4b-4494-83bb-7483a7bcb5bb",
+        "commons": "File:Hummus plate.jpg",
+        "author": "Orenrosenfeld",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Hummus_plate.jpg"
+      }
+    ],
+    "Paçanga Böreği": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/70434b7c-5f97-4568-91eb-59f889ace044",
+        "commons": "File:Cheese borek - Lily's Cafe, Brighton 2024-02-03.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cheese_borek_-_Lily%27s_Cafe,_Brighton_2024-02-03.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/8b275085-cc9b-40c4-873b-cdc1201a1f75",
+        "commons": "File:Paçanga böreği.jpg",
+        "author": "Gökçe Yörük",
+        "license": "Public domain",
+        "source": "https://commons.wikimedia.org/wiki/File:Pa%C3%A7anga_b%C3%B6re%C4%9Fi.jpg"
+      }
+    ],
+    "Karides Güveç": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/fb7fd2a7-8ce2-4813-901a-e3a1caab77dc",
+        "commons": "File:Seafood Casserole with Rice and Greens - The Landing, Marblehead (43155317844).jpg",
+        "author": "Haydn Blackey from Cardiff, Wales",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Seafood_Casserole_with_Rice_and_Greens_-_The_Landing,_Marblehead_(43155317844).jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/4fcc3a52-2ba7-4d5f-ae17-8e1a9d2d3826",
+        "commons": "File:Monkfish and shrimp rice, Olhão, 30 June 2015.JPG",
+        "author": "Kolforn (Kolforn)\nI'd appreciate if you could mail me (Kolforn@gmail.com) if you want to use this picture out of the Wik",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Monkfish_and_shrimp_rice,_Olh%C3%A3o,_30_June_2015.JPG"
+      }
+    ],
+    "Çıtır Kalamar": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/9bceb263-a36d-4aaf-b160-36eb7767cf4e",
+        "commons": "File:HK 長洲 Cheung Chau 興樂海鮮 Hing Lok Seafoods Restaurant food dish 酥炸魷魚 Deep fried Calamari squid Sept-2013.JPG",
+        "author": "Lauyuenkuema3",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:HK_%E9%95%B7%E6%B4%B2_Cheung_Chau_%E8%88%88%E6%A8%82%E6%B5%B7%E9%AE%AE_Hing_Lok_Seafoods_Restaurant_food_dish_%E9%85%A5%E7%82%B8%E9%AD%B7%E9%AD%9A_Deep_fried_Calamari_squid_Sept-2013.JPG"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/2d321464-e328-4daf-a08f-a8f3b71ac166",
+        "commons": "File:Calamares fritos 11-2012 - juantiagues.jpg",
+        "author": "juantiagues",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Calamares_fritos_11-2012_-_juantiagues.jpg"
+      }
+    ],
+    "Adana Kebap": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/a46b0a2d-bae1-43d7-864f-2ce05110ccb2",
+        "commons": "File:Kebab Gerashi.jpg",
+        "author": "Amin Noubahar",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Kebab_Gerashi.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/7d06aa10-a9d3-4622-ab1e-1d5f18e8da26",
+        "commons": "File:Adana Kebap.jpg",
+        "author": "Garrett Ziegler",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Adana_Kebap.jpg"
+      }
+    ],
+    "Urfa Kebap": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/c4d61707-b27f-4068-94fe-688bc99a41fa",
+        "commons": "File:Lula kebab 2.jpg",
+        "author": "Lesya Dolyk",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lula_kebab_2.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/847c0c8a-1fd6-4785-857c-504e1060da22",
+        "commons": "File:Spiced Kebab.jpg",
+        "author": "Almanta",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Spiced_Kebab.jpg"
+      }
+    ],
+    "Kuzu Şiş": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/07263c30-9a30-4282-91d4-d509ca7d78cc",
+        "commons": "File:Shish-kebab-MCB.jpg",
+        "author": "MCB at English Wikipedia",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Shish-kebab-MCB.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/d535979c-ad7d-47ea-a5e7-0be02e1c325b",
+        "commons": "File:Lamb Shish Kebab - Istanbul Grill, Metairie, Louisiana 23 March 2026.jpg",
+        "author": "Paul Lowry",
+        "license": "CC BY 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lamb_Shish_Kebab_-_Istanbul_Grill,_Metairie,_Louisiana_23_March_2026.jpg"
+      }
+    ],
+    "Tavuk Şiş": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/78663518-0d3d-4dca-9dca-db2065f5edef",
+        "commons": "File:Chicken Shish Kebab (34220281251).jpg",
+        "author": "pelican from Tokyo, Japan",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chicken_Shish_Kebab_(34220281251).jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/f0d81b3b-f1c7-4190-884d-19c51633340e",
+        "commons": "File:Tavuk Şiş.jpg",
+        "author": "Garrett Ziegler",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Tavuk_%C5%9Ei%C5%9F.jpg"
+      }
+    ],
+    "Karışık Izgara (2 Kişilik)": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/b2f8c85f-ba05-48e8-a3a2-cd8ba49be8c1",
+        "commons": "File:Chicken Çöp Kebab Platter - Lavash 2025-12-26.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chicken_%C3%87%C3%B6p_Kebab_Platter_-_Lavash_2025-12-26.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3964d45d-dff8-4d0b-a182-c9f5a731432d",
+        "commons": "File:Assorted Indian Barbecue.jpg",
+        "author": "Zainakil",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Assorted_Indian_Barbecue.jpg"
+      }
+    ],
+    "Izgara Levrek": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/5e6b4455-2664-445e-8d69-f67ede5fa025",
+        "commons": "File:Levrek Izgara Beykoz Koru Sosyal Tesisleri.JPG",
+        "author": "Benreis",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Levrek_Izgara_Beykoz_Koru_Sosyal_Tesisleri.JPG"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/2707bba6-fb7e-403b-80c1-ea57c5ba67aa",
+        "commons": "File:02-06-2017 Barbeque Robalo (Sea Bass), Albufeira (2).JPG",
+        "author": "Kolforn",
+        "license": "CC BY 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:02-06-2017_Barbeque_Robalo_(Sea_Bass),_Albufeira_(2).JPG"
+      }
+    ],
+    "Kıymalı Pide": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/d7089ffc-b72e-4757-95c9-6b5702bcd700",
+        "commons": "File:Nazilli-kiymali-pide-20201023 143731.jpg",
+        "author": "Erdalkara",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Nazilli-kiymali-pide-20201023_143731.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/0e392f9d-fa03-4713-9b96-ac0d47d31d21",
+        "commons": "File:Turkish pide with ground beef.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_pide_with_ground_beef.jpg"
+      }
+    ],
+    "Kaşarlı Pide": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3bdc1cb9-526f-4a15-8df0-ac0a95e80c14",
+        "commons": "File:KAŞARLİ AÇİK - panoramio.jpg",
+        "author": "kardeşler karadeniz …",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:KA%C5%9EARL%C4%B0_A%C3%87%C4%B0K_-_panoramio.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/c259e8f6-e9b3-4afe-a553-012924380d81",
+        "commons": "File:Antalya, Turkey meal March 2022 - 02.jpg",
+        "author": "Sharon Hahn Darlin",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Antalya,_Turkey_meal_March_2022_-_02.jpg"
+      }
+    ],
+    "Kuşbaşılı Kaşarlı Pide": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/de7dc269-8299-46ac-a9b3-73b36f46e99c",
+        "commons": "File:Pide with cheese and veal.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pide_with_cheese_and_veal.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/e5c7d742-9ab2-4638-a376-cf043247d7ec",
+        "commons": "File:Veal and egg pide.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Veal_and_egg_pide.jpg"
+      }
+    ],
+    "Sucuklu Yumurtalı Pide": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3eaf1b5f-8273-4590-82f8-607570442b2d",
+        "commons": "File:Hocapasa Pidecisi, Sucuklu Pide (14285595564).jpg",
+        "author": "Ryan Snyder",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Hocapasa_Pidecisi,_Sucuklu_Pide_(14285595564).jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/fee61712-6ccd-4d3f-b6a5-d789b357073a",
+        "commons": "File:Peynirli Pide.jpg",
+        "author": "Garrett Ziegler",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Peynirli_Pide.jpg"
+      }
+    ],
+    "Çoban Salata": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/5761957d-a47a-49d6-af06-b9de5e511a37",
+        "commons": "File:Shepherd's salad, Beyoglu (2275153309).jpg",
+        "author": "angela n. from Washington, DC",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Shepherd%27s_salad,_Beyoglu_(2275153309).jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/0a247cd2-6367-4bc7-9f96-da44c932c717",
+        "commons": "File:Liat Portal for Foodie Disorder - Chopped salad ingredients prepared in advance.jpg",
+        "author": "HaJunkiyada",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Chopped_salad_ingredients_prepared_in_advance.jpg"
+      }
+    ],
+    "Roka Salatası": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/b5f22588-1ec0-4cb4-a2d1-2205ce69e9cc",
+        "commons": "File:20240510 Arugula parmesan salad Restaurant MeGusto anagoria.jpg",
+        "author": "Anagoria",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:20240510_Arugula_parmesan_salad_Restaurant_MeGusto_anagoria.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/279c5140-3894-43a1-985f-7f222fb02299",
+        "commons": "File:20240510 171403 Corfu RestaurantMeGusto Arugula Parmesan Salad anagoria.jpg",
+        "author": "Anagoria",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:20240510_171403_Corfu_RestaurantMeGusto_Arugula_Parmesan_Salad_anagoria.jpg"
+      }
+    ],
+    "Izgara Tavuklu Sezar": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/31401679-35fc-4fb2-b245-0cf9a85ac8f1",
+        "commons": "File:Chicken Caesar Salad - Amo 2026-04-11.jpg",
+        "author": "Andy Li",
+        "license": "CC0",
+        "source": "https://commons.wikimedia.org/wiki/File:Chicken_Caesar_Salad_-_Amo_2026-04-11.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/770621a0-0cd7-4140-b027-ed17036914b6",
+        "commons": "File:Caesar Salad & Grilled Chicken (30548011308).jpg",
+        "author": "Prayitno / Thank you for (12 millions +) view from Los Angeles, USA",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Caesar_Salad_%26_Grilled_Chicken_(30548011308).jpg"
+      }
+    ],
+    "Künefe": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/02b3eb0d-e385-4011-ad75-f4ef7ef63b50",
+        "commons": "File:Knafeh khishneh.jpg",
+        "author": "白と赤茶",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Knafeh_khishneh.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/4b2be555-0b79-487f-b21b-65cdc36d9d87",
+        "commons": "File:Knafeh khishnah with cheese of sheep milk.jpg",
+        "author": "白と赤茶",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Knafeh_khishnah_with_cheese_of_sheep_milk.jpg"
+      }
+    ],
+    "Fıstıklı Baklava (4 Dilim)": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/a25c836f-141e-4528-b3e5-6d44841a40eb",
+        "commons": "File:Turkish baklava in a bakery in Taksim, Istanbul.jpg",
+        "author": "Benreis",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_baklava_in_a_bakery_in_Taksim,_Istanbul.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/46036f66-9211-4e81-9ed6-59d2eb38b101",
+        "commons": "File:بقلاوة (حلوى شرقية).JPG",
+        "author": "Fadyatef",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:%D8%A8%D9%82%D9%84%D8%A7%D9%88%D8%A9_(%D8%AD%D9%84%D9%88%D9%89_%D8%B4%D8%B1%D9%82%D9%8A%D8%A9).JPG"
+      }
+    ],
+    "Fırın Sütlaç": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/fd323dd7-1504-4d03-9f4a-3bce503f50f5",
+        "commons": "File:Turkish sütlaç - 1.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_s%C3%BCtla%C3%A7_-_1.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/a7581cca-9b1e-4c48-b701-64de21e640ee",
+        "commons": "File:Muhallebi with orange cake.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Muhallebi_with_orange_cake.jpg"
+      }
+    ],
+    "Katmer": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/05fe8860-dcb9-4089-91a6-01ec71618326",
+        "commons": "File:Details of katmer dessert.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Details_of_katmer_dessert.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3ec752ed-8ae8-4d8e-a2a0-ee29d9920ca8",
+        "commons": "File:Sweet katmer.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sweet_katmer.jpg"
+      }
+    ],
+    "Mevsim Meyveleri": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/9285ab3b-9631-4e16-968b-ee258761b3ff",
+        "commons": "File:20241117 Fruit Platter anagoria.jpg",
+        "author": "Anagoria",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:20241117_Fruit_Platter_anagoria.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/8aed74ee-dec0-4a4e-bc30-951b5ced1a19",
+        "commons": "File:20250315 Fruit Platter anagoria.jpg",
+        "author": "Anagoria",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:20250315_Fruit_Platter_anagoria.jpg"
+      }
+    ],
+    "Çay": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/b2aacf2e-e80c-4871-9471-ed96cccb349b",
+        "commons": "File:Glass tea cup.jpg",
+        "author": "Zeynel Cebeci",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Glass_tea_cup.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/49f34e0e-0269-4dfc-b136-9c12abc4e004",
+        "commons": "File:Glass of tea 05119.jpg",
+        "author": "Nevit Dilmen",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Glass_of_tea_05119.jpg"
+      }
+    ],
+    "Türk Kahvesi": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/f82c542c-eb2e-4922-a43b-1bd36d09ce17",
+        "commons": "File:Zambo Turkish Coffee 20190727.jpg",
+        "author": "Sakhalinio",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Zambo_Turkish_Coffee_20190727.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/90f11c83-2bfd-47c7-87b9-369bd9099cf4",
+        "commons": "File:Turkish Coffee with Crema.jpg",
+        "author": "Garrett Ziegler",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Turkish_Coffee_with_Crema.jpg"
+      }
+    ],
+    "Ayran": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/ed8c6a71-61f7-4bed-bb17-37ce070646f8",
+        "commons": "File:Selbst gemachter Ayran im original-türkischen Glas.jpg",
+        "author": "Manfred&amp;Barbara Aulbach",
+        "license": "CC BY-SA 3.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Selbst_gemachter_Ayran_im_original-t%C3%BCrkischen_Glas.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/602dd1ed-c2aa-4002-877d-180dd0786b14",
+        "commons": "File:Pide and ayran.jpg",
+        "author": "E4024",
+        "license": "CC BY-SA 4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Pide_and_ayran.jpg"
+      }
+    ],
+    "Ev Yapımı Limonata": [
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/3726b708-115b-43fb-bd29-984c676c4c9b",
+        "commons": "File:Lemonade - 27682817724.jpg",
+        "author": "HarshLight",
+        "license": "CC BY 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Lemonade_-_27682817724.jpg"
+      },
+      {
+        "file": "t/11111111-1111-4111-8111-111111111111/44ee5178-745b-4f3d-9ae0-c40f884c7c51",
+        "commons": "File:Basil lemonade (3609257528).jpg",
+        "author": "dana robinson from los angeles, ca, usa",
+        "license": "CC BY-SA 2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Basil_lemonade_(3609257528).jpg"
+      }
+    ]
+  }
+}

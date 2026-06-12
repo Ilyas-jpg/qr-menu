@@ -1,0 +1,247 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* dark: utilities [data-mode=dark] sarmalayıcısına bağlı (html değil —
+   tema tenant'a göre sayfa içinde server-render edilir, FOUC imkânsız) */
+@custom-variant dark (&:where([data-mode="dark"], [data-mode="dark"] *));
+
+/* ---- Tenant tema değişkenleri (sarmalayıcı inline style'dan gelir) ----
+   --mq-accent / --mq-accent-rgb / --mq-accent-fg  → lib/theme.ts üretir   */
+
+:root {
+  /* Aydınlık set — saf beyaz + nötr gri (krem YASAK), doygun accent */
+  --mq-surface: #ffffff;
+  --mq-surface-2: #f4f4f5;
+  --mq-card: #ffffff;
+  --mq-text: #131316;
+  --mq-text-2: #585852;
+  --mq-line: rgb(19 19 22 / 0.1);
+  --mq-line-strong: rgb(19 19 22 / 0.18);
+  --mq-accent: #c8a24b;
+  --mq-accent-rgb: 200 162 75;
+  --mq-accent-fg: #0b0b0d;
+  --mq-danger: #e5484d;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+
+[data-mode="dark"] {
+  /* Gece Menüsü — near-black + sıcak beyaz + altın hairline */
+  --mq-surface: #0b0b0d;
+  --mq-surface-2: #131316;
+  --mq-card: #16161a;
+  --mq-text: #f5f2ea;
+  --mq-text-2: #9c988c;
+  --mq-line: rgb(var(--mq-accent-rgb) / 0.18);
+  --mq-line-strong: rgb(var(--mq-accent-rgb) / 0.34);
+  --mq-danger: #ff5d5d;
+}
+
+@theme inline {
+  --color-surface: var(--mq-surface);
+  --color-surface-2: var(--mq-surface-2);
+  --color-card: var(--mq-card);
+  --color-ink: var(--mq-text);
+  --color-ink-2: var(--mq-text-2);
+  --color-line: var(--mq-line);
+  --color-line-strong: var(--mq-line-strong);
+  --color-accent: var(--mq-accent);
+  --color-accent-fg: var(--mq-accent-fg);
+  --color-danger: var(--mq-danger);
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+  --font-body: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-manrope);
+  --font-sans: var(--font-manrope);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+body {
+  background: var(--mq-surface);
+  color: var(--mq-text);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ---- Atmosfer: ince grain dokusu (Gece Menüsü imzası) ---- */
+.mq-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Yükleme koreografisi: tek seferlik staggered fade-up ---- */
+@keyframes mq-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+.mq-rise {
+  animation: mq-rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--rise-delay, 0ms);
+}
+
+@keyframes mq-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.mq-fade { animation: mq-fade 0.45s ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mq-rise, .mq-fade { animation: none; }
+}
+
+/* ---- Kategori çipleri: yatay kaydırmada scrollbar gizle ---- */
+.mq-scroll-x {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.mq-scroll-x::-webkit-scrollbar { display: none; }
+
+/* ---- Sheet (ürün detayı) ---- */
+@keyframes mq-sheet-up {
+  from { transform: translateY(100%); }
+  to   { transform: none; }
+}
+.mq-sheet { animation: mq-sheet-up 0.34s cubic-bezier(0.32, 0.72, 0, 1) both; }
+@media (prefers-reduced-motion: reduce) { .mq-sheet { animation: none; } }
+
+/* ---- Altın hairline başlık süsü ---- */
+.mq-rule {
+  background: linear-gradient(
+    90deg,
+    rgb(var(--mq-accent-rgb) / 0.55),
+    rgb(var(--mq-accent-rgb) / 0.08) 60%,
+    transparent
+  );
+  height: 1px;
+}
+
+/* Fiyatlar hizalı dursun */
+.mq-tabular { font-variant-numeric: tabular-nums; }
+
+/* ---- QR baskı sayfası (A4) ---- */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+  body {
+    background: #fff !important;
+  }
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+  --chart-1: oklch(0.87 0 0);
+  --chart-2: oklch(0.556 0 0);
+  --chart-3: oklch(0.439 0 0);
+  --chart-4: oklch(0.371 0 0);
+  --chart-5: oklch(0.269 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    @apply font-sans;
+  }
+}
