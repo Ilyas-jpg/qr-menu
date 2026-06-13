@@ -78,4 +78,4 @@ powershell -File scripts\deploy.ps1 [-SkipBuild] [-TargetDomain example.com] [-S
 
 ## Lisans
 
-Â© 2026 Ä°lyas Saltay â TÃ¼m haklarÄ± saklÄ±dÄ±r. AyrÄ±ntÄ±: [LICENSE](LICENSE)
+© 2026 İlyas Saltay — Tüm hakları saklıdır. Ayrıntı: [LICENSE](LICENSE)
