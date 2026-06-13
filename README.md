@@ -78,4 +78,4 @@ powershell -File scripts\deploy.ps1 [-SkipBuild] [-TargetDomain example.com] [-S
 
 ## Lisans
 
-[MIT](LICENSE) © 2026 İlyas Saltay (AlgowAI)
+[MIT](LICENSE) © 2026 İlyas Saltay
