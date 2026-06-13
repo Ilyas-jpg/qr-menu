@@ -9,6 +9,10 @@ const nextConfig: NextConfig = {
   // Passenger çok-process ISR tutarlılığı: bellek LRU kapalı,
   // .next/cache FS cache'i tek doğruluk kaynağı (process'ler arası ortak)
   cacheMaxMemorySize: 0,
+  // standalone trace'i bunları paketlemesin — deploy/*.tar.gz girerse paket yüzlerce MB şişer
+  outputFileTracingExcludes: {
+    "/*": ["./deploy/**/*", "./.uploads-dev/**/*", "./.chatgpt-images/**/*"],
+  },
   experimental: {
     // QR trafiği = ilk-ziyaret ağırlıklı, yavaş mobil bağlantı: CSS'i HTML'e göm,
     // render-blocking stylesheet round-trip'ini kaldır (Slow-4G LCP)

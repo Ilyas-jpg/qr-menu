@@ -18,6 +18,9 @@ const fraunces = Fraunces({
   subsets: ["latin", "latin-ext"],
   style: ["normal", "italic"],
   axes: ["opsz"],
+  // Display fontu 4 woff2 — preload'u LCP görseliyle bant yarıştırıyor (Slow-4G ölçümü 2026-06-13).
+  // swap olduğundan metni bloklamaz; CSS parse sonrası gelir.
+  preload: false,
 });
 
 const manrope = Manrope({

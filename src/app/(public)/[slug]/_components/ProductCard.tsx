@@ -2,7 +2,7 @@
 
 import type { Lang } from "@/lib/types";
 import type { EvaluatedProduct } from "@/lib/pricing";
-import { imageSrc, imageSrcSet } from "@/lib/constants";
+import { CARD_IMAGE_VARIANTS, imageSrc, imageSrcSet } from "@/lib/constants";
 import { t } from "@/lib/i18n";
 import { DietBadges, Monogram, PriceTag, ProductBadges, SoldOutChip, SpicinessDots } from "./bits";
 
@@ -40,8 +40,10 @@ export function ProductCard({ product, currency, lang, onOpen, priority, dimmed 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={imageSrc(img.file_stem, 640)}
-            srcSet={imageSrcSet(img.file_stem)}
-            sizes="(min-width: 768px) 310px, calc(100vw - 40px)"
+            /* LCP kartı sabit 640 indirir (gıda fotoğrafında ~1.8x yoğunluk yeterli) —
+               preload ile birebir aynı URL, cache'ten gelir. Diğer kartlar srcset'le seçer. */
+            srcSet={priority ? undefined : imageSrcSet(img.file_stem, CARD_IMAGE_VARIANTS)}
+            sizes={priority ? undefined : "(min-width: 768px) 310px, calc(100vw - 40px)"}
             width={img.width}
             height={img.height}
             alt={name}

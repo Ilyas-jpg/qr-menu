@@ -53,6 +53,10 @@ if (Test-Path $stage) { Remove-Item -Recurse -Force $stage }
 New-Item -ItemType Directory -Path "$stage\source", "$stage\public_html" | Out-Null
 
 Copy-Item -Recurse ".next\standalone\*" "$stage\source\"
+# Emniyet: trace'e sızmış ağır klasörleri stage'den at (tracing exclude'a ek kemer)
+foreach ($junk in "deploy", ".uploads-dev", ".chatgpt-images") {
+  if (Test-Path "$stage\source\$junk") { Remove-Item -Recurse -Force "$stage\source\$junk" }
+}
 New-Item -ItemType Directory -Force -Path "$stage\source\.next\static" | Out-Null
 Copy-Item -Recurse ".next\static\*" "$stage\source\.next\static\"
 if (Test-Path "public") { Copy-Item -Recurse "public" "$stage\source\public" -Force }
@@ -118,7 +122,13 @@ touch $BASE/source/tmp/restart.txt
 echo SWAP-OK
 '@
 $remoteScript = $remoteScript.Replace("__REMOTE_BASE__", $remoteBase).Replace("`r", "")
-$remoteScript | ssh $SshAlias "bash -s"
+# Pipe DEĞİL dosya: PS5 pipe'a BOM bulaştırıp bash parse'ını bozabiliyor (2026-06-13 dersi).
+# WriteAllText (encoding'siz) = BOM'suz UTF-8.
+$swapFile = Join-Path $env:TEMP "qrmenu-swap.sh"
+[System.IO.File]::WriteAllText($swapFile, $remoteScript)
+scp -q $swapFile "${SshAlias}:~/qrmenu-swap.sh"
+if ($LASTEXITCODE -ne 0) { throw "swap script scp başarısız" }
+ssh $SshAlias "bash ~/qrmenu-swap.sh; rc=`$?; rm -f ~/qrmenu-swap.sh; exit `$rc"
 if ($LASTEXITCODE -ne 0) { throw "Sunucu swap başarısız" }
 
 # 6) .env.production kontrolü

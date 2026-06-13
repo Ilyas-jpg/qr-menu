@@ -4,7 +4,7 @@ import { preload } from "react-dom";
 import { getMenu } from "@/lib/menu";
 import { themeToCssVars } from "@/lib/theme";
 import { evaluateMenu } from "@/lib/pricing";
-import { RESERVED_SLUGS, imageSrc, imageSrcSet } from "@/lib/constants";
+import { RESERVED_SLUGS, imageSrc } from "@/lib/constants";
 import { MenuExperience } from "./_components/MenuExperience";
 
 /**
@@ -62,15 +62,11 @@ export default async function MenuPage({ params }: Props) {
   const initialEvaluated = evaluateMenu(menu.categories, menu.campaigns);
 
   // LCP adayı = ilk kategorinin ilk görselli ürün kartı (tam genişlik foto).
-  // Preload: tarayıcı HTML'i parse edip <img>'i keşfetmeden indirmeye başlar (Slow-4G kazancı)
+  // Preload: tarayıcı HTML'i parse edip <img>'i keşfetmeden indirmeye başlar (Slow-4G kazancı).
+  // URL, priority kartın src'siyle BİREBİR aynı (sabit 640) — aksi halde çift indirme olur.
   const lcpImg = initialEvaluated[0]?.products.find((p) => p.images[0])?.images[0];
   if (lcpImg) {
-    preload(imageSrc(lcpImg.file_stem, 640), {
-      as: "image",
-      fetchPriority: "high",
-      imageSrcSet: imageSrcSet(lcpImg.file_stem),
-      imageSizes: "(min-width: 768px) 310px, calc(100vw - 40px)",
-    });
+    preload(imageSrc(lcpImg.file_stem, 640), { as: "image", fetchPriority: "high" });
   }
 
   return (

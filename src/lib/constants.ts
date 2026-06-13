@@ -48,6 +48,13 @@ export function imageSrc(fileStem: string, width: (typeof IMAGE_VARIANTS)[number
   return `${UPLOADS_PUBLIC_PATH}/${fileStem}-${width}.webp`;
 }
 
-export function imageSrcSet(fileStem: string): string {
-  return IMAGE_VARIANTS.map((w) => `${imageSrc(fileStem, w)} ${w}w`).join(", ");
+/** Kart bağlamı 1280 almaz: en geniş kart ~350 CSS px, 960 DPR-3'te bile yeter.
+    1280 yalnız ürün detay sheet'i (672px konteyner) için. */
+export const CARD_IMAGE_VARIANTS = [200, 640, 960] as const;
+
+export function imageSrcSet(
+  fileStem: string,
+  widths: readonly (typeof IMAGE_VARIANTS)[number][] = IMAGE_VARIANTS
+): string {
+  return widths.map((w) => `${imageSrc(fileStem, w)} ${w}w`).join(", ");
 }

@@ -342,7 +342,7 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
                       currency={tenant.currency}
                       lang={lang}
                       onOpen={openProduct}
-                      priority={j < 2}
+                      priority={j < 1}
                       dimmed={!cat.isOpen}
                     />
                   ))}
