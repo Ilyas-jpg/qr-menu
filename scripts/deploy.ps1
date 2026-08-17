@@ -65,7 +65,15 @@ New-Item -ItemType Directory -Force -Path "$stage\source\tmp" | Out-Null
 
 # public_html: .htaccess + _next/static (LiteSpeed doğrudan servis — Node CPU sıfır)
 $ht = Get-Content "deploy\htaccess-template" -Raw -Encoding UTF8
-$ht = $ht.Replace("{{APP_ROOT}}", $appRoot).Replace("{{SUPABASE_HOST}}", $supabaseHost)
+# Node ikilisi: CPU affinity'li sarmalayıcı varsa onu kullan (2026-07-27 nproc
+# olayı — taskset ile görünen çekirdek 2 olunca tokio/libuv havuzları küçülüyor,
+# app 75 → 11 thread). Sunucuda yoksa stok node'a düş, deploy kırılmasın.
+$leanNode = "$remoteHome/bin/node20-lean"
+$stockNode = "/opt/alt/alt-nodejs20/root/usr/bin/node"
+$nodeBin = (ssh $SshAlias "if [ -x '$leanNode' ]; then echo '$leanNode'; else echo '$stockNode'; fi").Trim()
+if (-not $nodeBin) { $nodeBin = $stockNode }
+Write-Host "  node ikilisi: $nodeBin" -ForegroundColor DarkGray
+$ht = $ht.Replace("{{APP_ROOT}}", $appRoot).Replace("{{SUPABASE_HOST}}", $supabaseHost).Replace("{{NODE_BIN}}", $nodeBin)
 [System.IO.File]::WriteAllText("$root\$stage\public_html\.htaccess", $ht) # BOM'suz UTF8
 New-Item -ItemType Directory -Force -Path "$stage\public_html\_next" | Out-Null
 Copy-Item -Recurse ".next\static" "$stage\public_html\_next\static"

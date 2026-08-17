@@ -69,7 +69,7 @@ export function ServiceButtons({ tenant, tableCode, lang }: Props) {
   const btnCls = (state: BtnState, primary: boolean) =>
     `flex-1 rounded-full py-3 text-[14px] font-extrabold transition-all active:scale-[0.98] disabled:opacity-80 ${
       state === "done"
-        ? "bg-surface-2 text-accent border border-accent/50"
+        ? "bg-surface-2 text-accent-ink border border-accent/50"
         : primary
           ? "bg-accent text-accent-fg"
           : "border border-line-strong bg-surface/80 text-ink backdrop-blur"

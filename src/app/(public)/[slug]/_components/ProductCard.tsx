@@ -68,14 +68,14 @@ export function ProductCard({ product, currency, lang, onOpen, priority, dimmed 
             {soldOut && <SoldOutChip lang={lang} />}
           </div>
         </div>
-        <div className="flex items-start justify-between gap-3 px-4 py-3.5">
+        <div className="flex items-start justify-between gap-3 px-4 pb-4 pt-3.5">
           <div className="min-w-0">
-            <h3 className="flex items-center gap-1.5 text-[15px] font-bold leading-snug">
+            <h3 className="flex items-center gap-1.5 font-display text-[17px] font-semibold leading-snug tracking-[-0.01em]">
               <span className={soldOut ? "line-through decoration-1" : ""}>{name}</span>
               <SpicinessDots level={product.spiciness} />
             </h3>
             {desc && (
-              <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-ink-2">{desc}</p>
+              <p className="mt-1.5 line-clamp-2 text-[12.5px] leading-relaxed text-ink-2">{desc}</p>
             )}
             <div className="mt-1.5">
               <DietBadges dietary={product.dietary} lang={lang} compact />
@@ -97,13 +97,13 @@ export function ProductCard({ product, currency, lang, onOpen, priority, dimmed 
       <Monogram name={name} className="h-[72px] w-[72px] shrink-0 rounded-xl border border-line" />
       <div className="flex min-w-0 flex-1 flex-col justify-center gap-1">
         <div className="flex items-start justify-between gap-3">
-          <h3 className="flex min-w-0 items-center gap-1.5 text-[15px] font-bold leading-snug">
+          <h3 className="flex min-w-0 items-center gap-1.5 font-display text-[17px] font-semibold leading-snug tracking-[-0.01em]">
             <span className={`truncate ${soldOut ? "line-through decoration-1" : ""}`}>{name}</span>
             <SpicinessDots level={product.spiciness} />
           </h3>
           <PriceTag product={product} currency={currency} lang={lang} />
         </div>
-        {desc && <p className="line-clamp-2 text-[13px] leading-relaxed text-ink-2">{desc}</p>}
+        {desc && <p className="line-clamp-2 text-[12.5px] leading-relaxed text-ink-2">{desc}</p>}
         <div className="flex items-center gap-2">
           <ProductBadges product={product} lang={lang} />
           <DietBadges dietary={product.dietary} lang={lang} compact />

@@ -86,7 +86,7 @@ export function ProductBadges({
           className={
             c.accent
               ? "rounded-full bg-accent px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-fg"
-              : "rounded-full border border-line-strong px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent"
+              : "rounded-full border border-line-strong px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent-ink"
           }
         >
           {c.label}
@@ -102,21 +102,37 @@ export function PriceTag({
   currency,
   lang,
   size = "md",
+  tone = "auto",
 }: {
   product: EvaluatedProduct;
   currency: string;
   lang: Lang;
   size?: "md" | "lg";
+  /** onImage: koyu foto perdesi üstünde okunacak (öne çıkanlar rayı) */
+  tone?: "auto" | "onImage";
 }) {
   const { price, original } = product.resolved;
+  const onImage = tone === "onImage";
   return (
     <span className={`mq-tabular inline-flex items-baseline gap-1.5 ${size === "lg" ? "text-xl" : "text-[15px]"}`}>
       {original != null && (
-        <s className="text-ink-2 text-[0.78em] font-medium decoration-[1.5px]">
+        <s
+          className={`text-[0.78em] font-medium decoration-[1.5px] ${onImage ? "text-white/70" : "text-ink-2"}`}
+        >
           {formatPrice(original, currency, lang)}
         </s>
       )}
-      <span className={`font-extrabold ${original != null ? "text-accent" : "text-ink"}`}>
+      <span
+        className={`font-extrabold ${
+          onImage
+            ? original != null
+              ? "text-accent"
+              : "text-white"
+            : original != null
+              ? "text-accent-ink"
+              : "text-ink"
+        }`}
+      >
         {formatPrice(price, currency, lang)}
       </span>
     </span>
@@ -140,7 +156,7 @@ export function Monogram({ name, className = "" }: { name: string; className?: s
       aria-hidden
       className={`flex items-center justify-center bg-[radial-gradient(120%_120%_at_30%_20%,rgb(var(--mq-accent-rgb)/0.28),rgb(var(--mq-accent-rgb)/0.06)_55%,transparent)] ${className}`}
     >
-      <span className="font-display italic text-accent/85 text-3xl leading-none select-none">
+      <span className="font-display italic text-accent-ink/85 text-3xl leading-none select-none">
         {letter}
       </span>
     </div>

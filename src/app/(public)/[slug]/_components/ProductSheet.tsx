@@ -112,7 +112,7 @@ export function ProductSheet({ product, tenant, lang, onClose, onAddToCart }: Pr
             {/* Alerjenler */}
             <div>
               <div className="mb-2 flex items-center gap-3">
-                <h3 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent">
+                <h3 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent-ink">
                   {ui("allergens", lang)}
                 </h3>
                 <div className="mq-rule flex-1" />

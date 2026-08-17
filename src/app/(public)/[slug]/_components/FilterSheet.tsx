@@ -58,7 +58,7 @@ export function FilterSheet({ open, filters, lang, onChange, onClose }: Props) {
               <button
                 type="button"
                 onClick={() => onChange(EMPTY_FILTERS)}
-                className="text-[12px] font-bold uppercase tracking-wider text-accent underline-offset-4 hover:underline"
+                className="text-[12px] font-bold uppercase tracking-wider text-accent-ink underline-offset-4 hover:underline"
               >
                 {ui("clearFilters", lang)} ({activeCount})
               </button>
@@ -68,7 +68,7 @@ export function FilterSheet({ open, filters, lang, onChange, onClose }: Props) {
           {/* Beslenme tercihi */}
           <div>
             <div className="mb-2 flex items-center gap-3">
-              <h3 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent">
+              <h3 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent-ink">
                 {ui("dietary", lang)}
               </h3>
               <div className="mq-rule flex-1" />
@@ -98,7 +98,7 @@ export function FilterSheet({ open, filters, lang, onChange, onClose }: Props) {
           {/* Alerjen hariç tut */}
           <div>
             <div className="mb-2 flex items-center gap-3">
-              <h3 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent">
+              <h3 className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-accent-ink">
                 {ui("excludeAllergens", lang)}
               </h3>
               <div className="mq-rule flex-1" />

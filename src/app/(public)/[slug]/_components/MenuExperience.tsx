@@ -34,8 +34,12 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
   const [filters, setFilters] = useState<MenuFilters>(EMPTY_FILTERS);
   const [filterOpen, setFilterOpen] = useState(false);
   const [active, setActive] = useState<EvaluatedProduct | null>(null);
-  // Sekmeli gezinme: tek seferde TEK kategori gösterilir (upuzun sayfa yok)
-  const [activeCat, setActiveCat] = useState<string | null>(initialEvaluated[0]?.id ?? null);
+  // Sekmeli gezinme: tek seferde TEK kategori gösterilir (upuzun sayfa yok).
+  // Açılış sekmesi = o saatte SERVİSTE olan ilk kategori — menü kapalı/soluk
+  // bir bölümle karşılamasın (kahvaltı 06:30–12:00 gibi pencereler yüzünden)
+  const [activeCat, setActiveCat] = useState<string | null>(
+    (initialEvaluated.find((c) => c.isOpen) ?? initialEvaluated[0])?.id ?? null
+  );
   const [tableCode, setTableCode] = useState<string | null>(null);
   const [cartOpen, setCartOpen] = useState(false);
   const cart = useCart(tenant.slug);
@@ -137,11 +141,14 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
                 height={48}
               />
             ) : null}
-            <h1 className="font-display text-[34px] font-semibold italic leading-[1.05] tracking-tight">
+            <h1 className="text-balance font-display text-[34px] font-semibold italic leading-[1.04] tracking-[-0.02em]">
               {tenant.name}
             </h1>
+            <div className="mq-rule mt-3 w-16" />
             {tenant.address && (
-              <p className="mt-2 text-[13px] leading-relaxed text-ink-2">{tenant.address}</p>
+              <p className="mt-2.5 text-[12.5px] leading-relaxed tracking-[0.01em] text-ink-2">
+                {tenant.address}
+              </p>
             )}
           </div>
 
@@ -167,7 +174,7 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
               <TableBridge onTable={setTableCode} />
             </Suspense>
             {tableCode && (
-              <span className="rounded-full border border-accent/50 bg-accent/10 px-3 py-1.5 text-[12px] font-extrabold text-accent">
+              <span className="rounded-full border border-accent/50 bg-accent/10 px-3 py-1.5 text-[12px] font-extrabold text-accent-ink">
                 {ui("table", lang)} {tableCode}
               </span>
             )}
@@ -176,7 +183,7 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
 
         {tenant.wifi_ssid && (
           <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-line px-3 py-1.5 text-[12px] font-semibold text-ink-2">
-            <span className="text-accent">⌁</span>
+            <span className="text-accent-ink">⌁</span>
             {ui("wifi", lang)}: <span className="text-ink">{tenant.wifi_ssid}</span>
             {tenant.wifi_password && (
               <>
@@ -196,8 +203,8 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
           aria-label={ui("featured", lang)}
         >
           <div className="mb-2.5 flex items-center gap-3 px-5">
-            <h2 className="text-[11px] font-extrabold uppercase tracking-[0.22em] text-accent">
-              ★ {ui("featured", lang)}
+            <h2 className="text-[10px] font-extrabold uppercase tracking-[0.3em] text-accent-ink">
+              {ui("featured", lang)}
             </h2>
             <div className="mq-rule flex-1" />
           </div>
@@ -205,31 +212,38 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
             {featured.map((p, i) => {
               const img = p.images[0];
               return (
+                /* Editoryal kapak kartı: ad + fiyat fotoğrafın üstünde,
+                   ayrı beyaz şerit yok — dergi kapağı gibi okunur */
                 <button
                   key={p.id}
                   type="button"
                   onClick={() => openProduct(p)}
-                  className={`w-[230px] shrink-0 snap-start overflow-hidden rounded-2xl border border-line bg-card text-left active:scale-[0.985] ${p.is_sold_out ? "opacity-55 saturate-50" : ""}`}
+                  className={`relative w-[204px] shrink-0 snap-start overflow-hidden rounded-[22px] border border-line bg-card text-left active:scale-[0.985] ${p.is_sold_out ? "opacity-55 saturate-50" : ""}`}
                 >
                   {img ? (
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                       src={imageSrc(img.file_stem, 640)}
-                      sizes="230px"
+                      sizes="204px"
                       alt={t(p.name, lang)}
                       width={img.width}
                       height={img.height}
                       /* rayda yalnız ilk kart ekranda — kalanı yatay scroll'da, bant genişliği LCP'ye kalsın */
                       loading={i === 0 ? "eager" : "lazy"}
                       decoding="async"
-                      className="aspect-[16/10] w-full object-cover"
+                      className="aspect-[4/5] w-full object-cover"
                     />
                   ) : (
-                    <Monogram name={t(p.name, lang)} className="aspect-[16/10] w-full" />
+                    <Monogram name={t(p.name, lang)} className="aspect-[4/5] w-full" />
                   )}
-                  <div className="flex items-center justify-between gap-2 px-3.5 py-3">
-                    <span className="truncate text-[14px] font-bold">{t(p.name, lang)}</span>
-                    <PriceTag product={p} currency={tenant.currency} lang={lang} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  <div className="absolute inset-x-0 bottom-0 p-3.5">
+                    <p className="line-clamp-2 font-display text-[15px] font-semibold leading-tight text-white">
+                      {t(p.name, lang)}
+                    </p>
+                    <div className="mt-1.5">
+                      <PriceTag product={p} currency={tenant.currency} lang={lang} tone="onImage" />
+                    </div>
                   </div>
                 </button>
               );
@@ -284,9 +298,9 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
                 type="button"
                 onClick={() => selectCategory(cat.id)}
                 aria-pressed={isActive}
-                className={`shrink-0 whitespace-nowrap rounded-full border px-3.5 py-1.5 text-[13px] font-bold transition-all ${
+                className={`shrink-0 whitespace-nowrap rounded-full border px-4 py-2 text-[12.5px] font-bold tracking-[0.01em] transition-all ${
                   isActive
-                    ? "border-accent bg-accent text-accent-fg shadow-[0_2px_12px_rgb(var(--mq-accent-rgb)/0.35)]"
+                    ? "border-accent bg-accent text-accent-fg shadow-[0_3px_14px_rgb(var(--mq-accent-rgb)/0.4)]"
                     : `border-line bg-card text-ink-2 hover:border-line-strong hover:text-ink ${cat.isOpen ? "" : "opacity-50"} ${searchMode ? "opacity-60" : ""}`
                 }`}
               >
@@ -366,7 +380,7 @@ export function MenuExperience({ menu, initialEvaluated }: Props) {
             </p>
           )}
         </div>
-        <div className="mt-4 flex items-center justify-center gap-4 text-[12px] font-bold uppercase tracking-wider text-accent">
+        <div className="mt-4 flex items-center justify-center gap-4 text-[12px] font-bold uppercase tracking-wider text-accent-ink">
           {tenant.instagram_url && (
             <a href={tenant.instagram_url} target="_blank" rel="noopener noreferrer" className="hover:underline">
               Instagram
@@ -443,7 +457,7 @@ function CategoryHeading({ cat, lang }: { cat: EvaluatedCategory & { isOpen: boo
   return (
     <>
       <div className="mb-1 flex items-baseline gap-3">
-        <h2 className="font-display text-[24px] font-semibold italic leading-tight">
+        <h2 className="font-display text-[26px] font-semibold italic leading-tight tracking-[-0.01em]">
           {t(cat.name, lang)}
         </h2>
         <div className="mq-rule flex-1 self-center" />

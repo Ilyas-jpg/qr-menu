@@ -5,8 +5,9 @@ import { toast } from "sonner";
 import type { AdminTenant } from "@/lib/auth";
 import { updateTenantSettings } from "@/app/admin/_actions/settings";
 
-/** Hazır accent paleti — canlı/yüksek kontrast (krem-pastel yok) */
-const ACCENT_PRESETS = ["#C8A24B", "#E2574C", "#2DB4A8", "#D4722C", "#7C5CC4", "#3E8FD8"];
+/** Hazır accent paleti — canlı/yüksek kontrast (pastel yok).
+    Son ikisi Sahil moduyla eşleşen kıyı tonları: derin ege + mercan. */
+const ACCENT_PRESETS = ["#C8A24B", "#E2574C", "#2DB4A8", "#D4722C", "#0E8F86", "#E2603F"];
 
 export function SettingsForm({ tenant }: { tenant: AdminTenant }) {
   const [name, setName] = useState(tenant.name);
@@ -17,7 +18,9 @@ export function SettingsForm({ tenant }: { tenant: AdminTenant }) {
   const [wifiSsid, setWifiSsid] = useState(tenant.wifi_ssid ?? "");
   const [wifiPass, setWifiPass] = useState(tenant.wifi_password ?? "");
   const [whatsapp, setWhatsapp] = useState(tenant.whatsapp_phone ?? "");
-  const [mode, setMode] = useState<"dark" | "light">(tenant.theme?.mode === "light" ? "light" : "dark");
+  const [mode, setMode] = useState<"dark" | "light" | "sand">(
+    tenant.theme?.mode === "light" || tenant.theme?.mode === "sand" ? tenant.theme.mode : "dark"
+  );
   const [accent, setAccent] = useState(tenant.theme?.accent ?? "#C8A24B");
   const [english, setEnglish] = useState(tenant.languages.includes("en"));
   const [waiterCall, setWaiterCall] = useState(tenant.settings.waiter_call_enabled !== false);
@@ -126,7 +129,7 @@ export function SettingsForm({ tenant }: { tenant: AdminTenant }) {
         <Section title="Görünüm">
           <Field label="Tema">
             <div className="flex gap-1.5">
-              {([["dark", "Koyu (önerilen)"], ["light", "Açık"]] as const).map(([v, label]) => (
+              {([["dark", "Koyu"], ["light", "Açık"], ["sand", "Sahil"]] as const).map(([v, label]) => (
                 <button
                   key={v}
                   type="button"

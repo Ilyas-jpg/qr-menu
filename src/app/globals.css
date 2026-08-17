@@ -10,7 +10,8 @@
    --mq-accent / --mq-accent-rgb / --mq-accent-fg  → lib/theme.ts üretir   */
 
 :root {
-  /* Aydınlık set — saf beyaz + nötr gri (krem YASAK), doygun accent */
+  /* Aydınlık set — saf beyaz + nötr gri, doygun accent
+     (sıcak krem isteyen tenant "sand" modunu seçer) */
   --mq-surface: #ffffff;
   --mq-surface-2: #f4f4f5;
   --mq-card: #ffffff;
@@ -21,6 +22,8 @@
   --mq-accent: #c8a24b;
   --mq-accent-rgb: 200 162 75;
   --mq-accent-fg: #0b0b0d;
+  /* metin-güvenli accent ikizi; gerçek değeri lib/theme.ts inline basar */
+  --mq-accent-ink: #8a6c22;
   --mq-danger: #e5484d;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -68,6 +71,48 @@
   --mq-danger: #ff5d5d;
 }
 
+/* Sahil — güneşte solmuş kum/krem + kıyı aksanı (yazlık sahil kafeleri).
+   Kartlar zeminden bir ton AÇIK: krem üstünde beyaz kart yükselir. */
+[data-mode="sand"] {
+  --mq-surface: #faf3e7;
+  --mq-surface-2: #f1e5d1;
+  --mq-card: #fffbf3;
+  --mq-text: #1e1b15;
+  --mq-text-2: #6b6151;
+  --mq-line: rgb(30 27 21 / 0.1);
+  --mq-line-strong: rgb(30 27 21 / 0.2);
+  --mq-danger: #c4342f;
+}
+
+/* Aydınlık zeminde hairline tek başına kartı ayıramaz → sıcak, alçak gölge */
+[data-mode="sand"] .bg-card {
+  box-shadow:
+    0 1px 2px rgb(61 47 25 / 0.05),
+    0 12px 28px -20px rgb(61 47 25 / 0.45);
+}
+
+/* Grain koyuda ışıldar, kremde kirletir → multiply ile kâğıt dokusuna çevir */
+[data-mode="sand"] .mq-grain::before {
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+}
+
+/* Altın hairline pastel accent'le krem üstünde kayboluyor → metin ikizini kullan */
+[data-mode="sand"] .mq-rule {
+  background: linear-gradient(
+    90deg,
+    var(--mq-accent-ink),
+    rgb(var(--mq-accent-rgb) / 0.35) 55%,
+    transparent
+  );
+  opacity: 0.55;
+}
+
+/* Koyu-slate yemek fotoğrafları krem sayfada ağır kalıyor: minik bir ışık payı */
+[data-mode="sand"] img {
+  filter: brightness(1.04) saturate(1.03);
+}
+
 @theme inline {
   --color-surface: var(--mq-surface);
   --color-surface-2: var(--mq-surface-2);
@@ -78,6 +123,7 @@
   --color-line-strong: var(--mq-line-strong);
   --color-accent: var(--mq-accent);
   --color-accent-fg: var(--mq-accent-fg);
+  --color-accent-ink: var(--mq-accent-ink);
   --color-danger: var(--mq-danger);
 
   --font-display: var(--font-fraunces), ui-serif, Georgia, serif;

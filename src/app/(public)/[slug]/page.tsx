@@ -6,6 +6,7 @@ import { themeToCssVars } from "@/lib/theme";
 import { evaluateMenu } from "@/lib/pricing";
 import { RESERVED_SLUGS, imageSrc } from "@/lib/constants";
 import { MenuExperience } from "./_components/MenuExperience";
+import { SeasideDecor } from "./_components/SeasideDecor";
 
 /**
  * Public menü — ISR (eski model, cacheComponents kapalı):
@@ -24,6 +25,18 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
+/** Tenant tema modu → geçerli mod (bilinmeyen/eksik değer koyuya düşer) */
+function resolveMode(mode: string | undefined): "dark" | "light" | "sand" {
+  return mode === "light" || mode === "sand" ? mode : "dark";
+}
+
+/** iOS status bar rengi: sayfanın gerçek zemini */
+const MODE_BAR_COLOR = {
+  dark: "#0b0b0d",
+  light: "#ffffff",
+  sand: "#faf3e7",
+} as const;
+
 export async function generateViewport({ params }: Props): Promise<Viewport> {
   const { slug } = await params;
   const menu = RESERVED_SLUGS.has(slug) ? null : await getMenu(slug);
@@ -32,7 +45,7 @@ export async function generateViewport({ params }: Props): Promise<Viewport> {
     initialScale: 1,
     viewportFit: "cover",
     // iOS status bar bölgesi tenant temasına uysun
-    themeColor: menu?.tenant.theme?.mode === "light" ? "#ffffff" : "#0b0b0d",
+    themeColor: MODE_BAR_COLOR[resolveMode(menu?.tenant.theme?.mode)],
   };
 }
 
@@ -55,7 +68,7 @@ export default async function MenuPage({ params }: Props) {
   const menu = await getMenu(slug);
   if (!menu) notFound();
 
-  const mode = menu.tenant.theme?.mode === "light" ? "light" : "dark";
+  const mode = resolveMode(menu.tenant.theme?.mode);
 
   // Server'da değerlendirilen ilk durum: hydration cache'lenmiş HTML ile tutarlı kalır,
   // client mount sonrası gerçek saatle tazeler (MenuExperience içindeki effect)
@@ -72,10 +85,13 @@ export default async function MenuPage({ params }: Props) {
   return (
     <div
       data-mode={mode}
-      style={themeToCssVars(menu.tenant.theme)}
-      className="mq-grain min-h-dvh bg-surface text-ink font-body"
+      style={themeToCssVars(menu.tenant.theme, mode)}
+      className="mq-grain relative isolate min-h-dvh overflow-x-clip bg-surface text-ink font-body"
     >
-      <MenuExperience menu={menu} initialEvaluated={initialEvaluated} />
+      {mode === "sand" && <SeasideDecor />}
+      <div className="relative z-10">
+        <MenuExperience menu={menu} initialEvaluated={initialEvaluated} />
+      </div>
     </div>
   );
 }

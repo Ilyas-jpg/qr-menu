@@ -3,6 +3,21 @@
  * Standalone server.js .env'i kendisi YÜKLEMEZ — burada okuyup process.env'e basarız.
  * .env.production bu dosyanın yanında durur (source/), chmod 600, deploy'a DAHİL DEĞİL.
  */
+/*
+ * THREAD DİYETİ (2026-07-27) — paylaşımlı hosting'de asıl kıt kaynak process/thread.
+ * Hesabın Max Processes tavanı 200; Node kütüphaneleri thread havuzlarını
+ * MAKİNENİN çekirdek sayısına göre açıyor (shared kutu 32+ çekirdek) → tek app
+ * onlarca thread yiyor, PHP siteleri fork edemeyip 503 veriyor.
+ * Bu değerler libuv/sharp/V8 havuzlarını kutunun değil, işin boyutuna göre kurar.
+ * İlk kullanımdan ÖNCE set edilmeli — bu yüzden dosyanın en başında.
+ */
+process.env.UV_THREADPOOL_SIZE ||= "2"; // varsayılan 4
+process.env.VIPS_CONCURRENCY ||= "1"; // sharp/libvips: çekirdek sayısı kadar açardı
+process.env.SHARP_CONCURRENCY ||= "1";
+process.env.NEXT_TELEMETRY_DISABLED ||= "1";
+// V8'in arka plan thread havuzu (--v8-pool-size) süreç BAŞLARKEN okunur; buradan
+// set edilemez → .htaccess'teki SetEnv NODE_OPTIONS ile veriliyor.
+
 const fs = require("node:fs");
 const path = require("node:path");
 

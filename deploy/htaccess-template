@@ -4,12 +4,25 @@
 # {{APP_ROOT}} deploy script'i tarafından doldurulur.
 # ============================================================
 
-PassengerNodejs /opt/alt/alt-nodejs20/root/usr/bin/node
+# {{NODE_BIN}} = ~/bin/node20-lean (CPU affinity'li sarmalayıcı) varsa o, yoksa
+# stok node. Sarmalayıcı 2026-07-27 nproc olayının çözümü — aşağıdaki nota bak.
+PassengerNodejs {{NODE_BIN}}
 PassengerAppType node
 PassengerAppRoot {{APP_ROOT}}
 PassengerStartupFile start.js
 PassengerAppEnv production
 PassengerFriendlyErrorPages off
+
+# --- Thread diyeti (2026-07-27 nproc olayı) ---
+# Kutu 64 çekirdek görünüyor; Rust/tokio (@next/swc) ve libuv havuzlarını çekirdek
+# sayısına göre açıyor → tek Next app 75 thread yiyip 200'lük hesap tavanını
+# dolduruyordu, PHP siteleri fork edemeyip 503 veriyordu.
+# ÇÖZÜM: uygulamayı ~/bin/node20-lean ile başlat (taskset -c 0,1). Görünen çekirdek
+# 2 olunca tokio da 2 worker açıyor: 75 → 11 thread (canlı ölçüldü).
+# NOT: SetEnv TOKIO_WORKER_THREADS İŞE YARAMIYOR — tokio bu env'i okumuyor,
+# çekirdek sayısına bakıyor. UV_THREADPOOL_SIZE ise SetEnv'den geçiyor.
+SetEnv UV_THREADPOOL_SIZE 2
+SetEnv VIPS_CONCURRENCY 1
 
 # --- Güvenlik başlıkları ---
 <IfModule mod_headers.c>
@@ -28,6 +41,21 @@ PassengerFriendlyErrorPages off
   <FilesMatch "\.(webp|jpg|jpeg|png|avif|gif|svg|ico|woff|woff2|css|js)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+</IfModule>
+
+# --- HTML edge cache'i kısa tut (2026-07-27 dersi) ---
+# Next, ISR sayfalarına s-maxage=3600 basıyor; Hostinger CDN bunu HIT'liyor.
+# Deploy sonrası edge, ESKİ HTML'i saatlerce servis edip artık var olmayan
+# content-hash'li chunk'ları istiyordu → ChunkLoadError. 60 sn'lik pencere +
+# stale-while-revalidate: CDN faydası korunur, deploy sonrası kırılma 1 dk'ya iner.
+# DİKKAT: yalnız public menü HTML'i. /admin ve /api ASLA edge'e açılmaz —
+# oturuma özel HTML'i paylaşımlı cache'e vermek veri sızdırır.
+<IfModule mod_headers.c>
+  Header always set Cache-Control "public, max-age=0, s-maxage=60, stale-while-revalidate=300" "expr=%{CONTENT_TYPE} =~ m#^text/html# && %{REQUEST_URI} !~ m#^/(admin|api)#"
+  # /admin ve /api hiçbir paylaşımlı cache'e girmez. (Next, statik prerender edilen
+  # /admin/login'e s-maxage=31536000 basıyordu → hem oturum yüzeyini edge'e açar
+  # hem de deploy sonrası ölü chunk'lı HTML'i bir YIL servis edebilirdi.)
+  Header always set Cache-Control "private, no-store" "expr=%{REQUEST_URI} =~ m#^/(admin|api)#"
 </IfModule>
 
 # --- Sıkıştırma ---

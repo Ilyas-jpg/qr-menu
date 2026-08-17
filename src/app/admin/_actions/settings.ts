@@ -17,7 +17,7 @@ const settingsSchema = z.object({
   wifi_password: z.string().trim().max(60).nullable().optional(),
   whatsapp_phone: z.string().trim().max(20).nullable().optional(),
   theme: z.object({
-    mode: z.enum(["dark", "light"]),
+    mode: z.enum(["dark", "light", "sand"]),
     accent: z.string().regex(/^#[0-9a-fA-F]{6}$/),
   }),
   english_enabled: z.boolean(),

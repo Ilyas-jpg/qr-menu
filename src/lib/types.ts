@@ -5,8 +5,9 @@ export type Lang = "tr" | "en";
 /** Çok dilli metin: {"tr":"...","en":"..."} — tr zorunlu */
 export type LString = { tr: string; en?: string | null };
 
+/** sand = "Sahil": yazlık/kıyı kafeleri için açık bej-krem set */
 export interface TenantTheme {
-  mode: "dark" | "light";
+  mode: "dark" | "light" | "sand";
   accent: string; // hex
 }
 
