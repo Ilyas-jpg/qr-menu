@@ -49,3 +49,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Geliştirme sırasında alınan ekran görüntüleri
+.shots/
+.playwright-mcp/
+
+# yapay zeka calisma dosyalari — depoya girmez
+CLAUDE.md
+AGENTS.md
+.claude/
+scratchpad/
